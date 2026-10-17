@@ -420,3 +420,7 @@ body.has-lightbox{overflow:hidden}
 .map-status{font-size:14px;color:var(--muted-light);margin-top:4px}
 @media(min-width:960px){.map-preview{min-height:520px;padding:42px}}
 @media(max-width:359px){.map-preview{padding:24px}}
+
+/* 17.10: hide the dock while the hero buttons are on screen */
+.dock { transition: transform .25s ease, opacity .25s ease; }
+.dock.is-away { transform: translateY(110%); opacity: 0; pointer-events: none; }

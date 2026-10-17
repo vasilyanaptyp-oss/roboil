@@ -29,3 +29,10 @@ if(dialog){var photo=document.getElementById('lightbox-image'),caption=document.
     document.getElementById('map-status').hidden=false;
   });
 })();
+
+/* 17.10: the bottom call bar shows only after the hero buttons scroll away (no duplicate buttons on the first screen) */
+(function(){
+  var hero=document.querySelector('.hero__cta'), dock=document.querySelector('.dock');
+  if(!hero||!dock||!('IntersectionObserver' in window)) return;
+  new IntersectionObserver(function(es){ dock.classList.toggle('is-away', es[0].isIntersecting); }, {threshold:0}).observe(hero);
+})();
